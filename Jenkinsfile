@@ -34,7 +34,6 @@ pipeline {
             steps {
                 input message: 'Lanjutkan ke tahap Deploy?'
             }
-            }
         }
         stage('Deploy') {
             agent any
