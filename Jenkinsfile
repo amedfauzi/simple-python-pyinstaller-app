@@ -33,8 +33,10 @@ pipeline {
         stage('Manual Approval') {
             steps {
                 input message: 'Lanjutkan ke tahap Deploy?'
-                currentBuild.result = 'ABORTED'
-                error('Deployment Dihentikan')
+                script {
+                    currentBuild.result = 'ABORTED'
+                    error('Pipeline Dihentikan')
+                }
             }
         }
         stage('Deploy') {
