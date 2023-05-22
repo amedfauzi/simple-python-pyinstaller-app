@@ -33,6 +33,7 @@ pipeline {
         stage('Manual Approval') {
             steps {
                 input message: 'Lanjutkan ke tahap Deploy?'
+                exit 0
             }
         }
         stage('Deploy') {
