@@ -48,6 +48,7 @@ pipeline {
                     sh "docker run --rm -v ${VOLUME} ${IMAGE} 'rm -rf build dist'"
                 }
             }
+            sleep 60
         }
     }
 }
