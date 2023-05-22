@@ -41,6 +41,7 @@ pipeline {
                     unstash(name: 'compiled-results')
                     sh "docker run --rm -v ${VOLUME} ${IMAGE} 'pyinstaller -F add2vals.py'"
                 }
+                sleep 60
             }
             post {
                 success {
@@ -48,7 +49,6 @@ pipeline {
                     sh "docker run --rm -v ${VOLUME} ${IMAGE} 'rm -rf build dist'"
                 }
             }
-            sleep 60
         }
     }
 }
