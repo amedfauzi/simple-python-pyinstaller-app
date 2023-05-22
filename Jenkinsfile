@@ -34,8 +34,7 @@ pipeline {
             steps {
                 input message: 'Lanjutkan ke tahap Deploy?'
                 script {
-                    currentBuild.result = 'ABORTED'
-                    error('Pipeline Dihentikan')
+                    currentBuild.result = 'SUCCESS'
                 }
             }
         }
